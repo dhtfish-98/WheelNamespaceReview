@@ -1,0 +1,147 @@
+{
+  "schema": "source-review-manifest/v1",
+  "project": "WheelNamespaceReview",
+  "version": "0.1.1",
+  "date": "2026-10-03",
+  "baseline_head": "b7d7ccf44de8cea8420d852b7c2fafffa22479d7",
+  "review_scope": "Current new runtime, all tests, CLI/input contracts, package/lock/build/CI and public scope/provenance documents. Existing fixed upstream/dependency read scopes are retained separately; no complete upstream or dependency audit is claimed.",
+  "self_hash_excluded": true,
+  "historical_evidence_is_current_source_validation": false,
+  "current_revision_hosted_ci": "OPEN",
+  "real_cvp_eligibility_approval": "OPEN",
+  "cross_platform_runtime": "OPEN",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 983,
+      "sha256": "ed0cfa39316500fd21d64be2472467d4efa68250fe171f58db553fef0ca2629c",
+      "lines": 27,
+      "read_scope": "complete_current_runtime_test_metadata_document_or_ci_file"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 60,
+      "sha256": "acfb3ee99b99fa70980ac3869ecb44b7b85c9d935e653d9a0be1ff3d312a0052",
+      "lines": 6,
+      "read_scope": "complete_current_runtime_test_metadata_document_or_ci_file"
+    },
+    {
+      "path": "DEFENSIVE_SCOPE.md",
+      "bytes": 1569,
+      "sha256": "dbbb581c72ec35dfc84ff29a7f888dcebfe42faa2ac1b866869d41e721a26d6e",
+      "lines": 25,
+      "read_scope": "complete_current_runtime_test_metadata_document_or_ci_file"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1090,
+      "sha256": "f95b584090059e94da02ed1692410349240d737764c74a3fc3466038d1056e21",
+      "lines": 21,
+      "read_scope": "unchanged_full_license_byte_identity_and_attribution"
+    },
+    {
+      "path": "MANIFEST.in",
+      "bytes": 236,
+      "sha256": "133c9a10768935d94608b0ea434eb720ddcddbb48b90e2a95ff6a75bba8ca968",
+      "lines": 5,
+      "read_scope": "complete_current_runtime_test_metadata_document_or_ci_file"
+    },
+    {
+      "path": "ORIGIN.md",
+      "bytes": 2901,
+      "sha256": "a27173843e578bfb6b5ea1f5e38d482e0de39dd29404b10afe7cebc5a16035cb",
+      "lines": 45,
+      "read_scope": "complete_current_runtime_test_metadata_document_or_ci_file"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6780,
+      "sha256": "8e97c9c78f928a5b3be5d936e18a2fb61d4f65d32531c3b164596d97f444a337",
+      "lines": 116,
+      "read_scope": "complete_current_runtime_test_metadata_document_or_ci_file"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 3182,
+      "sha256": "640fe044345429ad1f9a35c334da5c87228c683401390063c4e955ac701d5ee1",
+      "lines": 53,
+      "read_scope": "complete_current_runtime_test_metadata_document_or_ci_file"
+    },
+    {
+      "path": "evidence/source-review.json",
+      "bytes": 3960,
+      "sha256": "4d1cd900b94781358e9ca4b97b5462e76fa14f9eab6b13527ac706a405262aed",
+      "lines": 107,
+      "read_scope": "historical_record_identity_and_explicit_original_scope"
+    },
+    {
+      "path": "evidence/upstream-review.json",
+      "bytes": 3361,
+      "sha256": "a830a280ba85cef42fb68f3a6bd19025b9c14a519e95a1fcbc05c35bc62b95af",
+      "lines": 96,
+      "read_scope": "historical_record_identity_and_explicit_original_scope"
+    },
+    {
+      "path": "evidence/validation.json",
+      "bytes": 1794,
+      "sha256": "fd276a54135a7777955cce7c805b25b8453582d373011dee7e8592386e14a254",
+      "lines": 62,
+      "read_scope": "historical_record_identity_and_explicit_original_scope"
+    },
+    {
+      "path": "licenses/check-wheel-contents-MIT.txt",
+      "bytes": 1112,
+      "sha256": "d1dd353515839e0e00b263c8766e77dddb0f15c346c282e5982c213f7ccc5ad1",
+      "lines": 21,
+      "read_scope": "unchanged_full_license_byte_identity_and_attribution"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 790,
+      "sha256": "47cdddc8508de6017192d4801c454065a67d32938202e25b9b3ec47114e7cc5d",
+      "lines": 23,
+      "read_scope": "complete_current_runtime_test_metadata_document_or_ci_file"
+    },
+    {
+      "path": "src/wheel_namespace_review/__init__.py",
+      "bytes": 158,
+      "sha256": "3fedae163383c021d73aa71e259c6219975c9ab848df13a1d2c1cc5ed0ed2fbb",
+      "lines": 6,
+      "read_scope": "complete_current_runtime_test_metadata_document_or_ci_file"
+    },
+    {
+      "path": "src/wheel_namespace_review/__main__.py",
+      "bytes": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "lines": 3,
+      "read_scope": "complete_current_runtime_test_metadata_document_or_ci_file"
+    },
+    {
+      "path": "src/wheel_namespace_review/cli.py",
+      "bytes": 1016,
+      "sha256": "58309f5c97f5ed44b437688ee37ed4a633409ab6d2db9df96f5fa232839bca8f",
+      "lines": 21,
+      "read_scope": "complete_current_runtime_test_metadata_document_or_ci_file"
+    },
+    {
+      "path": "src/wheel_namespace_review/review.py",
+      "bytes": 35553,
+      "sha256": "e0c7324143969f9931499683099b494c26479c8bcb87354f53fc692b03bbf2da",
+      "lines": 631,
+      "read_scope": "complete_current_runtime_test_metadata_document_or_ci_file"
+    },
+    {
+      "path": "tests/test_review.py",
+      "bytes": 22933,
+      "sha256": "9d3f8400e5ccf8c7854300ebdcdf6807166d6fbf47eae74d59d0695211b101ce",
+      "lines": 436,
+      "read_scope": "complete_current_runtime_test_metadata_document_or_ci_file"
+    }
+  ],
+  "semantic_sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file",
+      "selected_semantics": "Windows reserved punctuation, ASCII 1-31 and NUL, trailing dot/space, and COM/LPT exact superscript 1-3 aliases. The portable policy additionally rejects DEL and does not simulate all Win32/installers."
+    }
+  ]
+}

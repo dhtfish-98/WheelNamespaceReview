@@ -67,6 +67,7 @@ class Review:
             "input_sha256": None, "status": "OPEN", "complete": True,
             "scope": "ZIP inventory, RECORD coverage, installation paths, namespace and .pth policy",
             "record_content_hashes_verified": False, "nested_archive_depth": 0,
+            "failure_count": 0,
             "stdlib_policy": {"python": f"{sys.version_info.major}.{sys.version_info.minor}",
                               "platform": sys.platform, "source": "sys.stdlib_module_names plus startup hooks"},
             "limits": asdict(limits), "counts": {}, "namespaces": [], "findings": [],
@@ -75,13 +76,21 @@ class Review:
     def add(self, status: str, code: str, location: str, detail: str) -> None:
         if status == "OPEN":
             self.result["complete"] = False
+        if status == "FAIL":
+            self.result["failure_count"] += 1
         findings = self.result["findings"]
+        finding = {"status": status, "code": code, "location": location[:300], "detail": detail[:500]}
         if len(findings) >= self.limits.findings - 1:
+            # Reserve one slot for the incomplete-inventory marker without losing
+            # the failure that triggered the cap. The counter survives omissions.
+            if status == "FAIL":
+                findings[-1] = finding
             findings.append({"status": "OPEN", "code": "finding_limit", "location": "report",
                              "detail": "Finding limit reached; remaining checks were not completed."})
+            self.result["findings_truncated"] = True
             self.result["complete"] = False
             raise StopReview
-        findings.append({"status": status, "code": code, "location": location[:300], "detail": detail[:500]})
+        findings.append(finding)
 
     def stop(self, code: str, location: str, detail: str) -> None:
         self.add("OPEN", code, location, detail)
@@ -94,7 +103,7 @@ class Review:
 
     def finish(self) -> dict:
         flags = {f["status"] for f in self.result["findings"]}
-        self.result["status"] = "FAIL" if "FAIL" in flags else ("OPEN" if "OPEN" in flags else "PASS")
+        self.result["status"] = "FAIL" if self.result["failure_count"] else ("OPEN" if "OPEN" in flags else "PASS")
         # Namespaces can be numerous even for a bounded archive. Never truncate silently.
         if len(json.dumps(self.result, ensure_ascii=True).encode()) > self.limits.report_bytes:
             self.result["namespaces"] = []
@@ -119,9 +128,10 @@ def path_ok(name: str, r: Review, location: str, directory: bool = False) -> boo
     value = name[:-1] if directory and name.endswith("/") else name
     parts = value.split("/")
     bad = not value or any(p in {"", ".", ".."} for p in parts)
-    bad |= any(ord(c) < 32 or ord(c) == 127 or c in "\\:" for c in value)
+    bad |= any(ord(c) < 32 or ord(c) == 127 or c in '\\:<>"|?*' for c in value)
     # Portable policy rejects Windows devices and paths normalized differently by installers.
-    devices = {"con", "prn", "aux", "nul", *(f"com{i}" for i in range(1, 10)), *(f"lpt{i}" for i in range(1, 10))}
+    devices = {"con", "prn", "aux", "nul", *(f"com{i}" for i in range(1, 10)), *(f"lpt{i}" for i in range(1, 10)),
+               *(f"com{i}" for i in "¹²³"), *(f"lpt{i}" for i in "¹²³")}
     bad |= any(p.endswith((" ", ".")) or p.split(".")[0].casefold() in devices for p in parts)
     if bad:
         r.add("FAIL", "unsafe_path", location, "Path is absolute, traversing, ambiguous, control-bearing or unsafe on Windows.")

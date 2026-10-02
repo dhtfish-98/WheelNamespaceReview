@@ -1,5 +1,28 @@
 # Validation record
 
+## Version 0.1.1, 2026-10-03
+
+All 57 source tests pass on local CPython 3.14.6 / macOS arm64. The new
+regressions cover a first failure arriving at tightened and default finding
+caps, counters and retained failure evidence after finding/report omission,
+Windows-reserved punctuation in data files and directories, ASCII controls,
+COM/LPT superscript device names, and safe ordinary Unicode data controls.
+Independent real wheel probes preserve input bytes and confirm the corrected
+FAIL results alongside normal data PASS controls. The path policy follows
+[Microsoft's documented filename rules](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file);
+no Windows runtime or installer execution is claimed.
+
+`SOURCE_REVIEW_MANIFEST.json` binds the current complete formal source set.
+The 2026-10-02 `evidence/source-review.json` and `evidence/validation.json`
+remain historical version 0.1.0 records; their hashes and test counts do not
+validate this revision. Fresh installed consumers, built wheel/sdist contents,
+source identity and artifact hashes are recorded in the separate dated
+engineering evidence. Checks bind those exact bytes rather than later builds.
+Matching hosted CI for this new revision, unobserved platforms, full upstream
+compatibility, authenticity and CVP approval remain OPEN.
+
+## Historical version 0.1.0
+
 Local results are recorded for 2026-10-02 (Asia/Tokyo). This record describes the
 implemented bounded scope; it does not validate CVP eligibility or approval.
 

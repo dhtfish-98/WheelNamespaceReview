@@ -26,6 +26,9 @@ The command emits one JSON report. Exit `0` means PASS for the declared checks,
 `1` means a demonstrated policy failure, and `2` means unresolved/unsupported
 input. FAIL takes precedence when the same report also has OPEN findings.
 `complete: false` preserves incomplete observations even in a FAIL report.
+`failure_count` counts observed failures even when report details are omitted.
+A findings cap retains the failure that triggers the cap and a separate OPEN
+marker; `findings_truncated: true` makes omitted detail explicit.
 An invalid CLI option exits `2` through argparse and prints a usage error.
 
 The report includes input SHA-256, interpreter-specific standard-library policy,
@@ -49,6 +52,11 @@ caller's explicit shell redirection.
   conflicts, duplicate members, case/NFC collisions, and `.data` installation
   collisions. Purelib and platlib are conservatively treated as one site-packages
   destination. Map scripts/data/headers separately.
+- Reject Windows-reserved filename punctuation, ASCII controls, trailing dots/
+  spaces and reserved device components, including COM/LPT superscript 1–3
+  aliases. This applies to data files and directories as well as Python source.
+  The portable policy follows [Microsoft filename rules](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file);
+  it does not claim to simulate every installer or Windows filesystem.
 - Identify Python source module/package/implicit namespace structures. Flag
   standard-library/startup-name overlaps, generic names requiring ownership
   decisions, module/package conflicts, bytecode and native-extension uncertainty.

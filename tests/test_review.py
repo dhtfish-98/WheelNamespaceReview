@@ -127,6 +127,22 @@ class ReviewTests(unittest.TestCase):
         data[:] = data.replace(needle, b"sample_pkg/\x00.py")
         self.expect("nul_member", bytes(data))
 
+    def test_windows_reserved_data_characters_and_controls(self):
+        for character in '<>"|?*\x01\x1f\x7f':
+            for path in (f"sample_pkg/asset{character}.txt", f"sample_pkg/part{character}/asset.txt", f"sample_pkg/part{character}/"):
+                with self.subTest(path=ascii(path)):
+                    self.expect("unsafe_path", wheel_bytes({path: b""}))
+
+    def test_windows_superscript_devices_and_safe_unicode_data(self):
+        for prefix in ("COM", "LPT"):
+            for number in "¹²³":
+                for suffix in ("", ".txt"):
+                    with self.subTest(prefix=prefix, number=number, suffix=suffix):
+                        self.expect("unsafe_path", wheel_bytes({f"sample_pkg/{prefix}{number}{suffix}": b"x"}))
+        for name in ("asset.txt", "日本語.txt", "number¹.txt", "COM⁴.txt", "ordinary name.txt"):
+            with self.subTest(name=name):
+                self.assertEqual(self.check(wheel_bytes({f"sample_pkg/{name}": b"x"}))["status"], "PASS")
+
     def test_casefold_and_unicode_aliases(self):
         for payload in ({"pkg/X.py": b"a", "pkg/x.py": b"b"}, {"caf\u00e9/a.py": b"a", "cafe\u0301/a.py": b"b"}):
             self.expect("portable_collision", wheel_bytes(payload))
@@ -286,6 +302,38 @@ class ReviewTests(unittest.TestCase):
     def test_finding_limit_preserves_unknown(self):
         result = self.expect("finding_limit", wheel_bytes({"json.py": b"x", "os.py": b"x", "site.py": b"x"}), limits=replace(Limits(), findings=2))
         self.assertFalse(result["complete"])
+
+    def test_first_failure_at_finding_cap_remains_fail(self):
+        for count, limits in ((1, replace(Limits(), findings=2)), (199, Limits())):
+            payload = {f"sample_pkg/nested{i}.zip": b"x" for i in range(count)}
+            original = wheel_bytes(payload)
+            with zipfile.ZipFile(io.BytesIO(original)) as zf:
+                rows = list(csv.reader(io.StringIO(zf.read(f"{DIST}/RECORD").decode())))
+            rows[0][1] = "sha256=invalid"
+            out = io.StringIO(newline="")
+            csv.writer(out, lineterminator="\n").writerows(rows)
+            result = self.check(wheel_bytes(payload, record_raw=out.getvalue().encode()), limits=limits)
+            self.assertEqual(result["status"], "FAIL", result)
+            self.assertEqual(result["failure_count"], 1)
+            self.assertIn("finding_limit", self.codes(result))
+            self.assertTrue(any(f["status"] == "FAIL" for f in result["findings"]))
+            self.assertTrue(result["findings_truncated"])
+            self.assertFalse(result["complete"])
+            self.assertLessEqual(len(result["findings"]), limits.findings)
+
+    def test_failure_counter_survives_finding_and_report_omission(self):
+        result = self.check(wheel_bytes({"json.py": b"x", "os.py": b"x", "site.py": b"x"}),
+                            limits=replace(Limits(), findings=2, report_bytes=4096))
+        self.assertEqual(result["status"], "FAIL", result)
+        self.assertEqual(result["failure_count"], 2)
+        self.assertTrue(any(f["status"] == "FAIL" for f in result["findings"]))
+        payload = {"a" * 190 + str(i) + ".py": b"x" for i in range(30)}
+        payload["json.py"] = b"x"
+        result = self.check(wheel_bytes(payload), limits=replace(Limits(), report_bytes=4096))
+        self.assertEqual(result["status"], "FAIL", result)
+        self.assertEqual(result["failure_count"], 1)
+        self.assertIn("report_limit", self.codes(result))
+        self.assertTrue(any(f["status"] == "FAIL" for f in result["findings"]))
 
     def test_report_limit_preserves_unknown(self):
         payload = {"a" * 190 + str(i) + ".py": b"x" for i in range(30)}

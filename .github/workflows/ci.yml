@@ -24,4 +24,4 @@ jobs:
       - name: Check installed CLI
         run: |
           wheel-namespace-review --version
-          wheel-namespace-review dist/wheel_namespace_review-0.1.0-py3-none-any.whl
+          wheel-namespace-review dist/wheel_namespace_review-0.1.1-py3-none-any.whl

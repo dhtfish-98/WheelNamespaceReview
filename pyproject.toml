@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wheel-namespace-review"
-version = "0.1.0"
+version = "0.1.1"
 description = "Read-only wheel inventory, installation namespace and startup entry review"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -20,4 +20,4 @@ wheel-namespace-review = "wheel_namespace_review.cli:main"
 where = ["src"]
 
 [tool.setuptools.data-files]
-"share/wheel-namespace-review" = ["ORIGIN.md", "DEFENSIVE_SCOPE.md", "VALIDATION.md"]
+"share/wheel-namespace-review" = ["ORIGIN.md", "DEFENSIVE_SCOPE.md", "VALIDATION.md", "SOURCE_REVIEW_MANIFEST.json"]
