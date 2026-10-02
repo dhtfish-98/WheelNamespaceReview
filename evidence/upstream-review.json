@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-02",
+  "upstream": "https://github.com/jwodder/check-wheel-contents",
+  "commit_sha": "4f490a11a156ad4215fb87458aa942daefd3fb2e",
+  "runtime_source_review_complete": true,
+  "full_repository_and_dependencies_review_complete": false,
+  "reviewed_files": [
+    {
+      "path": "src/check_wheel_contents/__init__.py",
+      "sha256": "e5d17d22c9abff4e99378da96d89aa14296d636592c10f6b836494931713398f",
+      "lines": 19
+    },
+    {
+      "path": "src/check_wheel_contents/__main__.py",
+      "sha256": "7a5b10805512c3f35497928b96ff40624310d1fa1f8899b5db04e169cb0a1273",
+      "lines": 174
+    },
+    {
+      "path": "src/check_wheel_contents/checker.py",
+      "sha256": "86c04ab3ac6bbae86d972a757b0790fd0ead0f188d47066ab8ce67ac6d1efda8",
+      "lines": 382
+    },
+    {
+      "path": "src/check_wheel_contents/checks.py",
+      "sha256": "6c992cdee4e8ad267ffea2702cc93dd50c7e7869237d2cde13548104e093598c",
+      "lines": 83
+    },
+    {
+      "path": "src/check_wheel_contents/config.py",
+      "sha256": "b72df0afd08d62789d15cfaefc32b28b68051cb0abd150f9d8d942b388174d7f",
+      "lines": 294
+    },
+    {
+      "path": "src/check_wheel_contents/contents.py",
+      "sha256": "6d14273f4b4fdcd07a2f09f37583cf91fe018347dcdc241573a97117499b55d5",
+      "lines": 231
+    },
+    {
+      "path": "src/check_wheel_contents/errors.py",
+      "sha256": "3eedbabc3fc0aed04becc37be38dadd177ab8ba9e220783ea9c50e3e1ea182c6",
+      "lines": 13
+    },
+    {
+      "path": "src/check_wheel_contents/filetree.py",
+      "sha256": "6825f25c0801ebc6aff186081486f42f109141c9c7d623c03ca6f87fec4f2cff",
+      "lines": 307
+    },
+    {
+      "path": "src/check_wheel_contents/util.py",
+      "sha256": "9d56a9782509e470f9cc3430bee28c4b82961a04cafb63facb375a5e08a3a5ec",
+      "lines": 138
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "828d1c6df4fa6ed0f5c15532e545921f7645b91f665c64dabe0c61ba5bbab107",
+      "lines": 91
+    },
+    {
+      "path": "tox.ini",
+      "sha256": "ade546f5a9d02cd5c086028ead0ed2771e99455a534c9ca810c2e3b79ece542d",
+      "lines": 78
+    },
+    {
+      "path": ".github/workflows/test.yml",
+      "sha256": "f355dc987bfca7e6bbb6a136a19ef607f0cc06c3c1dbbfea3d9cb53b2fa2c1a0",
+      "lines": 77
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "d1dd353515839e0e00b263c8766e77dddb0f15c346c282e5982c213f7ccc5ad1",
+      "lines": 21
+    }
+  ],
+  "partial_test_review": {
+    "path": "test/test_wheelcontents.py",
+    "lines": [
+      1,
+      110
+    ]
+  },
+  "not_reviewed_completely": [
+    "Remaining upstream tests and binary fixtures",
+    "Third-party dependency implementations",
+    "Full README and docs",
+    "renovation config"
+  ],
+  "upstream_not_run": true,
+  "findings": [
+    "contents.py:92-154 takes the central-directory metadata roots, but builds its principal file tree from RECORD rows",
+    "checker.py:W003/W009/W202 exclude top-level .pth from specified layout checks",
+    "filetree.py:from_local_tree recursively reads explicitly requested package/source trees",
+    "config.py:find_default discovers parent configuration files",
+    "__main__.py:args2wheelpaths recursively discovers wheel paths from directory inputs"
+  ],
+  "rewrite_architecture": "Bounded raw ZIP snapshot and central/local view before RECORD coverage and installation namespace review; no upstream runtime copied/invoked"
+}

@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-02",
+  "all_new_runtime_tests_package_ci_sources_reviewed": true,
+  "reviewed_files": [
+    {
+      "path": "src/wheel_namespace_review/__init__.py",
+      "sha256": "396cc33a7fb71c9593bdb3a7262e1a41181ce3efa7e892450a272a7323b7f85c",
+      "lines": 6
+    },
+    {
+      "path": "src/wheel_namespace_review/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "lines": 3
+    },
+    {
+      "path": "src/wheel_namespace_review/cli.py",
+      "sha256": "58309f5c97f5ed44b437688ee37ed4a633409ab6d2db9df96f5fa232839bca8f",
+      "lines": 21
+    },
+    {
+      "path": "src/wheel_namespace_review/review.py",
+      "sha256": "50f582b76f2811d3824cf6e74923fcfa4ed4d3c892c0116ea49b547a1655fe41",
+      "lines": 621
+    },
+    {
+      "path": "tests/test_review.py",
+      "sha256": "ff35e64054ce856c3cbb02eb27655864da4c6759371d554669e0c47629180149",
+      "lines": 388
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "339874f89a24a1a22d442eceac22ad80fa1e34fb8695856b2cb54bf99282d3d3",
+      "lines": 23
+    },
+    {
+      "path": "MANIFEST.in",
+      "sha256": "224fd9e4730568dac6366d7496fde5f2d5a87a52396e95e9af7edb25b56f234d",
+      "lines": 5
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "dbe4fdcc37d97aa061a5c64347e13557838c0ffee0c1784f2e609e3eb36f5bfc",
+      "lines": 27
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "acfb3ee99b99fa70980ac3869ecb44b7b85c9d935e653d9a0be1ff3d312a0052",
+      "lines": 6
+    },
+    {
+      "path": "README.md",
+      "sha256": "733a7646770611bd4bcaba7957c06cbe78f758662f474faff5d82966749634bf",
+      "lines": 108
+    },
+    {
+      "path": "ORIGIN.md",
+      "sha256": "a27173843e578bfb6b5ea1f5e38d482e0de39dd29404b10afe7cebc5a16035cb",
+      "lines": 45
+    },
+    {
+      "path": "DEFENSIVE_SCOPE.md",
+      "sha256": "dbbb581c72ec35dfc84ff29a7f888dcebfe42faa2ac1b866869d41e721a26d6e",
+      "lines": 25
+    },
+    {
+      "path": "VALIDATION.md",
+      "sha256": "2b5a660bb68cc439eaa50751b955000e38b76574e5c51a9675400585c3d07536",
+      "lines": 30
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "f95b584090059e94da02ed1692410349240d737764c74a3fc3466038d1056e21",
+      "lines": 21
+    },
+    {
+      "path": "licenses/check-wheel-contents-MIT.txt",
+      "sha256": "d1dd353515839e0e00b263c8766e77dddb0f15c346c282e5982c213f7ccc5ad1",
+      "lines": 21
+    }
+  ],
+  "review_focus": [
+    "No input import/install/execution/network/process/extraction path",
+    "ZIP count preflight before allocations and limits on snapshot/member/text/total/namespace/report",
+    "Bounded independent raw decompression detects forged uncompressed size",
+    "Header-only metadata avoids MIME recursion; CSV parser for RECORD; packaging parser for filename/version/tag",
+    "Real member paths checked separately from RECORD; duplicate/collision and data spreading checks",
+    "Exact CPython .pth startup admission and archive-contained path root promotion",
+    "Unknown/errors/limit truncation cannot produce clean status",
+    "Source/package/CI license and AI-assisted authorship are explicit"
+  ],
+  "resolved_review_findings": [
+    "Raw decompression replaces trust in ZipExtFile declared-size truncation",
+    "Tag Cartesian expansion is capped before packaging parser",
+    "Large Unicode policy/inventory fallback cannot evade report byte limit",
+    "Metadata header-only mode prevents multipart body recursion",
+    "Explicit empty .data directories are checked",
+    "Deterministic sorted missing-record findings"
+  ],
+  "remaining_scope_limits": [
+    "No RECORD payload digest/signature authenticity",
+    "No complete Core Metadata semantic/License-File/SBOM validator",
+    "No native behavior or ABI analysis",
+    "No input package execution or runtime import resolution",
+    "No full upstream test/dependency audit",
+    "Only local CPython 3.14/macOS executed; CI matrix not hosted-run"
+  ]
+}

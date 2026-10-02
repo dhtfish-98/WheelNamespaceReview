@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-02",
+  "timezone": "Asia/Tokyo",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "platform": "macOS-26.7-arm64-arm-64bit-Mach-O",
+  "dependency_versions": {
+    "packaging": "25.0",
+    "build": "1.3.0",
+    "setuptools": "80.9.0",
+    "wheel": "0.45.1"
+  },
+  "source_unittest": {
+    "tests": 53,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v"
+  },
+  "installed_wheel_unittest": {
+    "tests": 53,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "working_directory": ".verification/work",
+    "editable_install": false,
+    "network_during_install": false,
+    "command": "../consumer/bin/python -m unittest discover -s ../../tests -v"
+  },
+  "read_only_no_execute_boundary": "Sentinel and mocks verify no input module execution, network/process or extraction; every fixture scan preserves bytes",
+  "status": "LOCAL_VALIDATED",
+  "upstream_execution": false,
+  "reviewed_input_package_installation": false,
+  "hosted_ci_execution": false,
+  "cvp_approval_observed": false,
+  "independent_installed_cli": [
+    {
+      "case": "valid",
+      "status": "PASS",
+      "exit_code": 0,
+      "input_unchanged": true
+    },
+    {
+      "case": "overlap",
+      "status": "FAIL",
+      "exit_code": 1,
+      "input_unchanged": true
+    },
+    {
+      "case": "damaged",
+      "status": "OPEN",
+      "exit_code": 2,
+      "input_unchanged": true
+    }
+  ],
+  "installed_source_identity_matches": true,
+  "package_contents": {
+    "full_license_texts_in_wheel_and_sdist": true,
+    "sdist_tests_ci_origin_and_review_evidence_present": true,
+    "archive_no_environment_or_bytecode": true
+  },
+  "self_wheel_scoped_policy_status": "PASS"
+}
