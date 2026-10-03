@@ -1,3 +1,5 @@
+> 目录已整理：文档在「项目文档」，构建、缓存与暂存输入在「Build」。从仓库根目录运行 `python3 构建.py --build`；如需使用本文原有源码命令，先运行 `python3 构建.py --stage --ci`，再进入 `Build/源码`。暂存会恢复原输入路径。现有版本和历史验证记录按各自提交理解。
+
 # WheelNamespaceReview
 
 
@@ -12,7 +14,7 @@ The implementation is independent and automated. Its semantic reference is
 [check-wheel-contents](https://github.com/jwodder/check-wheel-contents) at
 `4f490a11a156ad4215fb87458aa942daefd3fb2e`. This is a narrower new project,
 with different architecture and checks; it does not claim full upstream
-compatibility or applicant authorship of upstream work. See [ORIGIN](ORIGIN.md).
+compatibility or applicant authorship of upstream work. See [ORIGIN](<ORIGIN.md>).
 
 ## Use
 
@@ -109,8 +111,8 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 python -m build
 ```
 
-[VALIDATION](VALIDATION.md) records actual local results and limitations.
-[DEFENSIVE_SCOPE](DEFENSIVE_SCOPE.md) describes authorized use and attribution.
+[VALIDATION](<VALIDATION.md>) records actual local results and limitations.
+[DEFENSIVE_SCOPE](<DEFENSIVE_SCOPE.md>) describes authorized use and attribution.
 The fixed upstream is a design reference only; no original source or fixtures are packaged.
 The new implementation's MIT license, provenance/scope documents and runtime source are packaged.
 

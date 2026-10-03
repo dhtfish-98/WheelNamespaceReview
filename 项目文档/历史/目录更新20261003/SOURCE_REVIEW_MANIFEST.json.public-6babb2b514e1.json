@@ -1,0 +1,121 @@
+{
+  "schema": "current-formal-source-manifest/v1",
+  "project": "WheelNamespaceReview",
+  "version": "0.1.3",
+  "new_implementation_author": "dhtfish98",
+  "new_implementation_maintainer": "dhtfish98",
+  "baseline_commit": "1e1bbe4d4e3f48bd9659ae14f5638e5e2c75d750",
+  "runtime_review": "Own runtime unchanged except existing version metadata; current source/package inventories and required notice bytes checked. Upstream read scope remains bounded in ORIGIN.md.",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "abc89c9dd2df4b3d13a54b828c00b3dfa0ee2cc35257d11865372efbaf40c6ff",
+      "bytes": 983,
+      "lines": 27
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "acfb3ee99b99fa70980ac3869ecb44b7b85c9d935e653d9a0be1ff3d312a0052",
+      "bytes": 60,
+      "lines": 6
+    },
+    {
+      "path": "DEFENSIVE_SCOPE.md",
+      "sha256": "df0eecf55359f54cd1e53fcacf8e88a44c2309c10afa669f69591056e2c71776",
+      "bytes": 1557,
+      "lines": 25
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "de926d6c22d9e061af6158b0f23146ce036bfb2a562f2f406acec2dc4bd8b298",
+      "bytes": 1066,
+      "lines": 21
+    },
+    {
+      "path": "MANIFEST.in",
+      "sha256": "0240cf68d2114a1aa3c522e1d18636a9bded73fd1584ad61e08aa2bd63f6deea",
+      "bytes": 875,
+      "lines": 25
+    },
+    {
+      "path": "ORIGIN.md",
+      "sha256": "d6affb4648ed5dd204410d84b911f67b5868ae9933cf7ab6530aad7b0485f9a9",
+      "bytes": 3605,
+      "lines": 51
+    },
+    {
+      "path": "README.md",
+      "sha256": "e83910b7c4d4d773f76f43930b8953dbd612e3f74b326cea43e98d620d351ca0",
+      "bytes": 7249,
+      "lines": 120
+    },
+    {
+      "path": "VALIDATION.md",
+      "sha256": "37e79f603ef1c99ab2a7f515d5ae9159806715b115307cf0bfd032af152d74cf",
+      "bytes": 5649,
+      "lines": 79
+    },
+    {
+      "path": "evidence/source-review.json",
+      "sha256": "3bdb87e4a7052bd769d180c9083909748c043a855aabbe0279be3c6a6005fd0f",
+      "bytes": 3964,
+      "lines": 107
+    },
+    {
+      "path": "evidence/upstream-review.json",
+      "sha256": "a830a280ba85cef42fb68f3a6bd19025b9c14a519e95a1fcbc05c35bc62b95af",
+      "bytes": 3361,
+      "lines": 96
+    },
+    {
+      "path": "evidence/validation.json",
+      "sha256": "fd276a54135a7777955cce7c805b25b8453582d373011dee7e8592386e14a254",
+      "bytes": 1794,
+      "lines": 62
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "5d63a8d19e3c0848ca6b964b67d2a1fa10251d13095a81bab5971229f13d3617",
+      "bytes": 733,
+      "lines": 24
+    },
+    {
+      "path": "src/wheel_namespace_review/__init__.py",
+      "sha256": "ba510481db673272ac0c0099286d388d10a9855859b5857556345b1238eaaa5f",
+      "bytes": 158,
+      "lines": 6
+    },
+    {
+      "path": "src/wheel_namespace_review/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "bytes": 48,
+      "lines": 3
+    },
+    {
+      "path": "src/wheel_namespace_review/cli.py",
+      "sha256": "58309f5c97f5ed44b437688ee37ed4a633409ab6d2db9df96f5fa232839bca8f",
+      "bytes": 1016,
+      "lines": 21
+    },
+    {
+      "path": "src/wheel_namespace_review/review.py",
+      "sha256": "1df4f317b97f6c2fde20360891bb8d843df51484a624265fc08c2589be9762b2",
+      "bytes": 35790,
+      "lines": 634
+    },
+    {
+      "path": "tests/test_reader_capabilities.py",
+      "sha256": "9a2fd1dcf89529e61329a0ebd498387c852dde172ffeff0526ccb3e720a734be",
+      "bytes": 3130,
+      "lines": 67
+    },
+    {
+      "path": "tests/test_review.py",
+      "sha256": "9d3f8400e5ccf8c7854300ebdcdf6807166d6fbf47eae74d59d0695211b101ce",
+      "bytes": 22933,
+      "lines": 436
+    }
+  ],
+  "manifest_self_digest": "excluded",
+  "engineering_scope": "Current local source/package evidence; exact-commit hosted CI and applicant/CVP approval are separate."
+}

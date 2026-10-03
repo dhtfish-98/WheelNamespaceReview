@@ -6,10 +6,10 @@ build-backend = "setuptools.build_meta"
 name = "wheel-namespace-review"
 version = "0.1.3"
 description = "Read-only wheel inventory, installation namespace and startup entry review"
-readme = "README.md"
+readme = "项目文档/README.md"
 requires-python = ">=3.11"
 license = "MIT"
-license-files = ["LICENSE"]
+license-files = ["项目文档/LICENSE"]
 authors = [{name = "dhtfish98"}]
 maintainers = [{name = "dhtfish98"}]
 dependencies = ["packaging>=24.2,<27"]
@@ -21,4 +21,4 @@ wheel-namespace-review = "wheel_namespace_review.cli:main"
 where = ["src"]
 
 [tool.setuptools.data-files]
-"share/wheel-namespace-review" = ["ORIGIN.md", "DEFENSIVE_SCOPE.md", "VALIDATION.md", "SOURCE_REVIEW_MANIFEST.json"]
+"share/wheel-namespace-review" = ["项目文档/ORIGIN.md", "项目文档/DEFENSIVE_SCOPE.md", "项目文档/VALIDATION.md", "SOURCE_REVIEW_MANIFEST.json"]

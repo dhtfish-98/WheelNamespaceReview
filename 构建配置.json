@@ -1,0 +1,35 @@
+{
+  "schema": "project-build-layout.v1",
+  "project": "WheelNamespaceReview",
+  "author": "dhtfish98",
+  "kind": "python",
+  "base_public_commit": "6babb2b514e1d200d1f5bd538ad8a2dc087fcf23",
+  "restored_inputs": [
+    {
+      "original": "DEFENSIVE_SCOPE.md",
+      "stored": "项目文档/DEFENSIVE_SCOPE.md",
+      "sha256": "df0eecf55359f54cd1e53fcacf8e88a44c2309c10afa669f69591056e2c71776"
+    },
+    {
+      "original": "LICENSE",
+      "stored": "项目文档/LICENSE",
+      "sha256": "de926d6c22d9e061af6158b0f23146ce036bfb2a562f2f406acec2dc4bd8b298"
+    },
+    {
+      "original": "ORIGIN.md",
+      "stored": "项目文档/ORIGIN.md",
+      "sha256": "d6affb4648ed5dd204410d84b911f67b5868ae9933cf7ab6530aad7b0485f9a9"
+    },
+    {
+      "original": "README.md",
+      "stored": "项目文档/README.md",
+      "sha256": "5016ca2243c4a31bb2045db620040660264e89d986e5d5921f7476bae0c8cc00"
+    },
+    {
+      "original": "VALIDATION.md",
+      "stored": "项目文档/VALIDATION.md",
+      "sha256": "37e79f603ef1c99ab2a7f515d5ae9159806715b115307cf0bfd032af152d74cf"
+    }
+  ],
+  "platform_entries": []
+}
