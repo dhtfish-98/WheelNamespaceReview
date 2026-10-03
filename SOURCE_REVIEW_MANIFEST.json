@@ -1,15 +1,15 @@
 {
   "schema": "current-formal-source-manifest/v1",
   "project": "WheelNamespaceReview",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "new_implementation_author": "dhtfish98",
   "new_implementation_maintainer": "dhtfish98",
-  "baseline_commit": "8467dd9a0f87c5a20e52b44619f93becb2bcf6ad",
-  "runtime_review": "All own runtime files read; test files inspected for scope and executed. Upstream review remains bounded as stated in ORIGIN.md.",
+  "baseline_commit": "1e1bbe4d4e3f48bd9659ae14f5638e5e2c75d750",
+  "runtime_review": "Own runtime unchanged except existing version metadata; current source/package inventories and required notice bytes checked. Upstream read scope remains bounded in ORIGIN.md.",
   "files": [
     {
       "path": ".github/workflows/ci.yml",
-      "sha256": "3eeae6c1ab6e6efd4beb72ef1c73dcb80b6f81262cd99aaf63c3bb377d0bfa77",
+      "sha256": "abc89c9dd2df4b3d13a54b828c00b3dfa0ee2cc35257d11865372efbaf40c6ff",
       "bytes": 983,
       "lines": 27
     },
@@ -33,27 +33,27 @@
     },
     {
       "path": "MANIFEST.in",
-      "sha256": "e6ed21387a826c296d7d0a17d6878f530abd90c8015e9574915432c2d6699cb7",
-      "bytes": 921,
-      "lines": 26
+      "sha256": "0240cf68d2114a1aa3c522e1d18636a9bded73fd1584ad61e08aa2bd63f6deea",
+      "bytes": 875,
+      "lines": 25
     },
     {
       "path": "ORIGIN.md",
-      "sha256": "9dbaaf69bf528fa54de19b7c007c163743d3a35bf9376740d6a4dcf406c3ff15",
-      "bytes": 3151,
-      "lines": 47
+      "sha256": "d6affb4648ed5dd204410d84b911f67b5868ae9933cf7ab6530aad7b0485f9a9",
+      "bytes": 3605,
+      "lines": 51
     },
     {
       "path": "README.md",
-      "sha256": "bd32cf558ba3bf965695f8426a40969fd7e075d558dd8419409ebe6b76c2c916",
-      "bytes": 7264,
-      "lines": 121
+      "sha256": "e83910b7c4d4d773f76f43930b8953dbd612e3f74b326cea43e98d620d351ca0",
+      "bytes": 7249,
+      "lines": 120
     },
     {
       "path": "VALIDATION.md",
-      "sha256": "5cd29a0bfda61cfa7b79aa5384f6eed9dcd539afe4dc4c80dee5f2075c409063",
-      "bytes": 4444,
-      "lines": 67
+      "sha256": "37e79f603ef1c99ab2a7f515d5ae9159806715b115307cf0bfd032af152d74cf",
+      "bytes": 5649,
+      "lines": 79
     },
     {
       "path": "evidence/source-review.json",
@@ -74,20 +74,14 @@
       "lines": 62
     },
     {
-      "path": "licenses/check-wheel-contents-MIT.txt",
-      "sha256": "d1dd353515839e0e00b263c8766e77dddb0f15c346c282e5982c213f7ccc5ad1",
-      "bytes": 1112,
-      "lines": 21
-    },
-    {
       "path": "pyproject.toml",
-      "sha256": "36d18cafd1fa57c58261febf40605e0d02696c39ede271ae712d036a929959f0",
-      "bytes": 774,
+      "sha256": "5d63a8d19e3c0848ca6b964b67d2a1fa10251d13095a81bab5971229f13d3617",
+      "bytes": 733,
       "lines": 24
     },
     {
       "path": "src/wheel_namespace_review/__init__.py",
-      "sha256": "b7160fc5839c7c0179837a43d13401990fe4e09fee83d25a064ff9011732e2e6",
+      "sha256": "ba510481db673272ac0c0099286d388d10a9855859b5857556345b1238eaaa5f",
       "bytes": 158,
       "lines": 6
     },
@@ -123,5 +117,5 @@
     }
   ],
   "manifest_self_digest": "excluded",
-  "engineering_scope": "Source/package evidence; new hosted CI, applicant eligibility and provider approval are separate."
+  "engineering_scope": "Current local source/package evidence; exact-commit hosted CI and applicant/CVP approval are separate."
 }

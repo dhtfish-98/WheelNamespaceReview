@@ -16,11 +16,10 @@ include VALIDATION.md
 include evidence/source-review.json
 include evidence/upstream-review.json
 include evidence/validation.json
-include licenses/check-wheel-contents-MIT.txt
 include pyproject.toml
 include src/wheel_namespace_review/__init__.py
 include src/wheel_namespace_review/__main__.py
 include src/wheel_namespace_review/cli.py
 include src/wheel_namespace_review/review.py
-include tests/test_review.py
 include tests/test_reader_capabilities.py
+include tests/test_review.py

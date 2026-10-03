@@ -1,7 +1,7 @@
 # WheelNamespaceReview
 
 
-New implementation author: **dhtfish98**. Current project version: **0.1.2**.
+New implementation author: **dhtfish98**. Current project version: **0.1.3**.
 
 A small defensive tool for reviewing an existing Python wheel before it enters
 an installation pipeline. It reads bytes, compares the actual ZIP inventory with
@@ -111,9 +111,8 @@ python -m build
 
 [VALIDATION](VALIDATION.md) records actual local results and limitations.
 [DEFENSIVE_SCOPE](DEFENSIVE_SCOPE.md) describes authorized use and attribution.
-The full upstream MIT notice is preserved in
-[licenses/check-wheel-contents-MIT.txt](licenses/check-wheel-contents-MIT.txt).
-Both license texts, provenance/scope documents and runtime source are packaged.
+The fixed upstream is a design reference only; no original source or fixtures are packaged.
+The new implementation's MIT license, provenance/scope documents and runtime source are packaged.
 
 Specifications consulted: [PyPA wheel format](https://packaging.python.org/en/latest/specifications/binary-distribution-format/)
 and [CPython site configuration](https://docs.python.org/3/library/site.html).

@@ -6,8 +6,8 @@ fixed commit `4f490a11a156ad4215fb87458aa942daefd3fb2e` (MIT).
 The frozen archive SHA-256 recorded during source collection is
 `31b61504cac44ae1b5a1a60468d76a5fd39101d74f3438b057443d5079ee72bf`.
 The archive digest is source-collection provenance, not a signature or authorship
-proof. The full copyright/permission/disclaimer notice is retained verbatim in
-`licenses/check-wheel-contents-MIT.txt`.
+proof. No upstream runtime, fixture or document excerpt is distributed.
+The reference-only license copy has been omitted; new source is MIT-licensed.
 
 Upstream runtime review covered all nine source files: `__init__.py`,
 `__main__.py`, `checker.py`, `checks.py`, `config.py`, `contents.py`, `errors.py`,
@@ -45,3 +45,7 @@ have verified it. They must not claim original authorship of upstream software,
 independent human authorship of generated output, or CVP approval based on this repository.
 
 New implementation author: dhtfish98. This attribution applies to the new project implementation; original sources, licenses and third-party notices retain their authors. Automated checks do not establish independent human review or CVP eligibility.
+
+## Current distribution and reference boundary
+
+Actual packaged material is the new implementation and generated inert wheel cases. check-wheel-contents is a design reference only. packaging is separately installed, not bundled. New implementation author and maintainer: dhtfish98. Source identities and bounded research facts above remain provenance, not an assertion that those authors wrote or endorsed the new runtime.
