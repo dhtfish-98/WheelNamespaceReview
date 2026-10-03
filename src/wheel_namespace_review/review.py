@@ -143,7 +143,10 @@ def key(name: str) -> str:
 
 
 def snapshot(path: Path, r: Review) -> bytes:
-    flags = os.O_RDONLY | getattr(os, "O_NONBLOCK", 0) | getattr(os, "O_NOFOLLOW", 0)
+    required = ('O_NOFOLLOW', 'O_NONBLOCK')
+    if os.name != "posix" or any(type(getattr(os, flag, None)) is not int or getattr(os, flag) <= 0 for flag in required):
+        r.stop("input_error", "input", "POSIX nonblocking/no-follow capabilities are unavailable.")
+    flags = os.O_RDONLY | os.O_NONBLOCK | os.O_NOFOLLOW
     with os.fdopen(os.open(path, flags), "rb") as stream:
         before = os.fstat(stream.fileno())
         if not stat.S_ISREG(before.st_mode):

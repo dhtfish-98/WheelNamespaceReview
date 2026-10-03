@@ -1,11 +1,14 @@
 # WheelNamespaceReview
 
+
+New implementation author: **dhtfish98**. Current project version: **0.1.2**.
+
 A small defensive tool for reviewing an existing Python wheel before it enters
 an installation pipeline. It reads bytes, compares the actual ZIP inventory with
 RECORD, maps installation paths and identifies namespace/startup policy risks.
 It never installs, imports, extracts or executes the input package.
 
-The implementation is independent and AI-assisted. Its semantic reference is
+The implementation is independent and automated. Its semantic reference is
 [check-wheel-contents](https://github.com/jwodder/check-wheel-contents) at
 `4f490a11a156ad4215fb87458aa942daefd3fb2e`. This is a narrower new project,
 with different architecture and checks; it does not claim full upstream
@@ -114,3 +117,5 @@ Both license texts, provenance/scope documents and runtime source are packaged.
 
 Specifications consulted: [PyPA wheel format](https://packaging.python.org/en/latest/specifications/binary-distribution-format/)
 and [CPython site configuration](https://docs.python.org/3/library/site.html).
+
+Local-file capability boundary: required OS flags must be exact positive integers. This wheel reader checks the explicit leaf with POSIX no-follow/nonblocking flags; it does not promise symlink-free parent ancestry. Missing, null, zero, boolean or otherwise invalid required capabilities return a controlled OPEN result before file access. Native Windows local-file reading is outside this POSIX profile.

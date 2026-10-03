@@ -20,6 +20,6 @@ do not establish that a package is malicious or that actual shadowing will occur
 This project fits a lawful defensive supply-chain review use case. CVP eligibility
 and approval also require truthful applicant identity/organization, attributable
 work, actual use and any safeguards impact evidence. Neither the upstream project
-nor an AI-assisted local rewrite establishes those requirements on its own.
+nor an local rewrite establishes those requirements on its own.
 No application approval, production incident or real-world safeguards limitation
 has been observed in this implementation task.

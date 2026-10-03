@@ -86,7 +86,7 @@
     "Real member paths checked separately from RECORD; duplicate/collision and data spreading checks",
     "Exact CPython .pth startup admission and archive-contained path root promotion",
     "Unknown/errors/limit truncation cannot produce clean status",
-    "Source/package/CI license and AI-assisted authorship are explicit"
+    "Source/package/CI license and implementation attribution are explicit"
   ],
   "resolved_review_findings": [
     "Raw decompression replaces trust in ZipExtFile declared-size truncation",

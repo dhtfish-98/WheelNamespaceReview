@@ -3,3 +3,24 @@ recursive-include licenses *.txt
 recursive-include tests *.py
 recursive-include .github *.yml
 recursive-include evidence *.json
+
+# Current formal source inventory, including provenance and tests.
+include .github/workflows/ci.yml
+include .gitignore
+include DEFENSIVE_SCOPE.md
+include LICENSE
+include ORIGIN.md
+include README.md
+include SOURCE_REVIEW_MANIFEST.json
+include VALIDATION.md
+include evidence/source-review.json
+include evidence/upstream-review.json
+include evidence/validation.json
+include licenses/check-wheel-contents-MIT.txt
+include pyproject.toml
+include src/wheel_namespace_review/__init__.py
+include src/wheel_namespace_review/__main__.py
+include src/wheel_namespace_review/cli.py
+include src/wheel_namespace_review/review.py
+include tests/test_review.py
+include tests/test_reader_capabilities.py

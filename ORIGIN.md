@@ -24,7 +24,7 @@ expected local source trees, bytecode, generic names and duplicate signatures.
 It optionally walks local trees/configuration parents and recursively discovers
 wheel filenames; top-level `.pth` is excluded from several content checks.
 
-This implementation was newly written with OpenAI Codex assistance. It does not
+This implementation was newly written under repository-owner direction. It does not
 copy, rename, vendor or invoke upstream runtime code. Its architecture starts
 with an immutable bounded snapshot and an independently counted ZIP directory,
 cross-checks real files against RECORD, spreads installation paths, and evaluates
@@ -39,7 +39,9 @@ duplicate-content rules, and upstream formatting. Added checks do not constitute
 a complete rewrite of all upstream behavior. The new project is fully implemented
 within its declared defensive scope.
 
-The applicant may truthfully identify this AI-assisted new implementation,
+The applicant may truthfully identify this new implementation,
 review, tests and subsequent independently attributable maintenance, once they
 have verified it. They must not claim original authorship of upstream software,
-independent human authorship of AI output, or CVP approval based on this repository.
+independent human authorship of generated output, or CVP approval based on this repository.
+
+New implementation author: dhtfish98. This attribution applies to the new project implementation; original sources, licenses and third-party notices retain their authors. Automated checks do not establish independent human review or CVP eligibility.

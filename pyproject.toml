@@ -4,13 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wheel-namespace-review"
-version = "0.1.1"
+version = "0.1.2"
 description = "Read-only wheel inventory, installation namespace and startup entry review"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 license-files = ["LICENSE", "licenses/check-wheel-contents-MIT.txt"]
-authors = [{name = "WheelNamespaceReview contributors (AI-assisted implementation)"}]
+authors = [{name = "dhtfish98"}]
+maintainers = [{name = "dhtfish98"}]
 dependencies = ["packaging>=24.2,<27"]
 
 [project.scripts]
