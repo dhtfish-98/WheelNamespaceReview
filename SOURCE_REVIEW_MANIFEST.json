@@ -1,15 +1,15 @@
 {
   "schema": "current-formal-source-manifest/v1",
   "project": "WheelNamespaceReview",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "new_implementation_author": "dhtfish98",
   "new_implementation_maintainer": "dhtfish98",
   "baseline_commit": "1e1bbe4d4e3f48bd9659ae14f5638e5e2c75d750",
-  "runtime_review": "Own runtime unchanged except existing version metadata; current source/package inventories and required notice bytes checked. Upstream read scope remains bounded in ORIGIN.md.",
+  "runtime_review": "Own parser and policy behavior unchanged; version metadata updated for this patch. Current source and package inventories and retained notice bytes are checked. Upstream read scope remains bounded in ORIGIN.md.",
   "files": [
     {
       "path": ".github/workflows/ci.yml",
-      "sha256": "8595a4fb91cf652657e651e1d7b8953225d695e28d0ea749b054bdee848c35a8",
+      "sha256": "ab82465fe0a8d3dfb4ab34836c98dbefb63112f68e16f67606d691983ca51858",
       "bytes": 2304,
       "lines": 51
     },
@@ -51,13 +51,13 @@
     },
     {
       "path": "pyproject.toml",
-      "sha256": "320fb37e552546edf4ab5e82694811e8329892c40c524189aa8cbfecb7d13841",
+      "sha256": "369f2ecfda9bf0e13622a047c940907449caf0cf9fac7b4aba66a61649de0958",
       "bytes": 798,
       "lines": 24
     },
     {
       "path": "src/wheel_namespace_review/__init__.py",
-      "sha256": "ba510481db673272ac0c0099286d388d10a9855859b5857556345b1238eaaa5f",
+      "sha256": "c8d4f4be39d9a85c283d418f8f8a3e802f7a47eb5fe8ad3d067316d3b55c99bd",
       "bytes": 158,
       "lines": 6
     },
@@ -97,7 +97,7 @@
       "path": "构建.py"
     },
     {
-      "sha256": "12f71bfb32619a6f58da2adbc917303534cbfee20697ebf6cd636e59502eac46",
+      "sha256": "5b889cfc9b5f60cf66ae59762519142411b8a40e44f995c795c845b8c25cb575",
       "bytes": 1112,
       "path": "构建配置.json"
     },
@@ -121,15 +121,15 @@
     },
     {
       "path": "项目文档/README.md",
-      "sha256": "5016ca2243c4a31bb2045db620040660264e89d986e5d5921f7476bae0c8cc00",
+      "sha256": "404dbe0ae1996a1629b1a6be8372079ac34cc4f54a31f3afcce17343ffc2e480",
       "bytes": 7610,
       "lines": 122
     },
     {
       "path": "项目文档/VALIDATION.md",
-      "sha256": "37e79f603ef1c99ab2a7f515d5ae9159806715b115307cf0bfd032af152d74cf",
-      "bytes": 5649,
-      "lines": 79
+      "sha256": "494f9ed210fdea35ae82f748a5bd6759ad3d39a04072328cb2f2a6c92ffe6de7",
+      "bytes": 6514,
+      "lines": 85
     },
     {
       "sha256": "41b68ccd91d0153b7573bdc744ac712964f8662a896358dae7a3652b1870e9d1",
@@ -149,6 +149,6 @@
     "original_inventory": "项目文档/历史/目录更新20261003/SOURCE_REVIEW_MANIFEST.json.public-6babb2b514e1.json",
     "original_inventory_sha256": "41b68ccd91d0153b7573bdc744ac712964f8662a896358dae7a3652b1870e9d1",
     "path_view": "Canonical repository paths; the builder also restores byte-identical legacy aliases under ignored Build for existing packaging checks",
-    "scope": "Current file inventory and packaging paths only; runtime bytes/version/API unchanged. Historical validation and security conclusions are retained, not rerun or newly certified."
+    "scope": "Current file inventory and packaging paths; only version identifiers changed in the runtime. Historical validation and security conclusions are retained, not rerun or newly certified."
   }
 }

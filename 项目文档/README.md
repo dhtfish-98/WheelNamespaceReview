@@ -3,7 +3,7 @@
 # WheelNamespaceReview
 
 
-New implementation author: **dhtfish98**. Current project version: **0.1.3**.
+New implementation author: **dhtfish98**. Current project version: **0.1.4**.
 
 A small defensive tool for reviewing an existing Python wheel before it enters
 an installation pipeline. It reads bytes, compares the actual ZIP inventory with
